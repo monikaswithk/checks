@@ -6,7 +6,7 @@ class Sample2(Checks):
     def exists(self):
 
         """sample2.py exists"""
-        self.require("2.py")
+        self.require("sample2.py")
 
 
 
