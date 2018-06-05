@@ -15,5 +15,4 @@ class Sample2(Checks):
     def test_5_output(self):
 
         """input of nothing yields output of 5"""
-
-        self.spawn("./python sample2.py").stdout("5\n", "5\n").exit(0)
+        self.spawn("python sample2.py").stdout("5\n", "5\n").exit(0)
