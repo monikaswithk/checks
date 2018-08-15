@@ -39,15 +39,6 @@ class Fahrenheit(Checks):
         """-123.45678 degrees Celsius yields -190.2 degrees Fahrenheit"""
         self.spawn("python fahrenheit.py").stdin("-123.45678").stdout(number(-190.2), "-190.2\n").exit(0)
 
-    @check("exists")
-    def test_reject_foo(self):
-        """rejects a non-numeric input of "foo" """
-        self.spawn("python fahrenheit.py").stdin("foo").reject()
-
-    @check("exists")
-    def test_reject_empty_string(self):
-        """rejects a non-numeric input of "" """
-        self.spawn("python fahrenheit.py").stdin("").reject()
 
 
 

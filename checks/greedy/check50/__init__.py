@@ -49,15 +49,6 @@ class Greedy(Checks):
         """rejects a negative input like -.1"""
         self.spawn("python greedy.py").stdin("-1").reject()
 
-    @check("exists")
-    def test_reject_foo(self):
-        """rejects a non-numeric input of "foo" """
-        self.spawn("python greedy.py").stdin("foo").reject()
-
-    @check("exists")
-    def test_reject_empty(self):
-        """rejects a non-numeric input of "" """
-        self.spawn("python greedy.py").stdin("").reject()
 
 
 def coins(num):
