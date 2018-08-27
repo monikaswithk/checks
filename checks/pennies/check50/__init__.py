@@ -5,7 +5,7 @@ class Pennies(Checks):
 
     @check()
     def exists(self):
-        """pennies.c exists"""
+        """pennies.py exists"""
         self.require("pennies.py")
 
     @check("exists")
