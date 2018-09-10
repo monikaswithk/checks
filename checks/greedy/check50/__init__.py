@@ -36,13 +36,8 @@ class Greedy(Checks):
     @check("exists")
     def test420(self):
         """input of 4.2 yields output of 18"""
-        expected = "18\n"
-        actual = self.spawn("python greedy.py").stdin("4.2").stdout()
-        if not re.search(coins(18), actual):
-            err = Error(Mismatch(expected, actual))
-            if re.search(coins(22), actual):
-                err.helpers = "Did you forget to round your input to the nearest cent?"
-            raise err
+        self.spawn("python greedy.py").stdin("4.2").stdout(coins(18), "18\n").exit(0)
+
 
     @check("exists")
     def test_reject_negative(self):
