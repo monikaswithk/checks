@@ -6,7 +6,7 @@ class Isbn(Checks):
 
     @check()
     def exists(self):
-        """isbn.c exists"""
+        """isbn.py exists"""
         self.require("isbn.py")
 
 
