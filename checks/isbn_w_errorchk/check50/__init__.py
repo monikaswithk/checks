@@ -40,3 +40,18 @@ class Isbn(Checks):
         """Mystery Test"""
         self.spawn("python isbn.py").stdin("1632168146").stdout("^YES\n", "YES\n").exit(0)
 
+    @check("exists")
+    def ISBN_with_X(self):
+        """rejects ISBNs with X as checksum"""
+        self.spawn("python isbn.py").stdin("078974984X").reject()
+
+    @check("exists")
+    def rejects_ISBNs_with_dashes(self):
+        """rejects ISBNs with dashes"""
+        self.spawn("python isbn.py").stdin("0-789-75198-4").reject()
+
+    @check("exists")
+    def rejects_empty(self):
+        """rejects a non-numeric input of "" """
+        self.spawn("python isbn.py").stdin("").reject()
+
