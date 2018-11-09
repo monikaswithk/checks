@@ -1,5 +1,4 @@
-less = __import__("check50").import_from("../initialsless")
-from less import *
+from check50 import *
 
 class InitialsMore(Checks):
 
